@@ -1,11 +1,25 @@
 #include "Customer.h"
 
-Customer::Customer() {
-
-};
+Customer::Customer(string first_name, string last_name, string dob, int balance):
+	mFirstName(first_name),
+	mLastName(last_name) ,
+	mDateOfBirth(dob),
+	mbalance(balance)
+{};
 
 bool Customer::updateBalance(int val, int ifAdding) {
-
+	if (ifAdding) {
+		mbalance += val;
+		return true;
+	}
+	else {
+		if (mbalance - val >= 0) {
+			mbalance -= val;
+			return true;
+		}
+		return false;
+	}
+	return false;
 }
 
 bool Customer::updateCustomer(string newVal, int ifFirstName) {
@@ -16,6 +30,6 @@ bool Customer::updateCustomer(string newDate) {
 
 }
 
-void createStandingOrder() {
+void Customer::createStandingOrder() {
 
 }

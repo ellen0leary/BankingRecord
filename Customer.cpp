@@ -23,11 +23,11 @@ bool Customer::updateBalance(int val, int ifAdding) {
 }
 
 bool Customer::updateCustomer(string newVal, int ifFirstName) {
-
+	return true;
 }
 
 bool Customer::updateCustomer(string newDate) {
-
+	return false;
 }
 
 void Customer::createStandingOrder() {

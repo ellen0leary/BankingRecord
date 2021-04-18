@@ -95,13 +95,17 @@ void showAllAccounts() {
 void deleteAccount() {
     int index = 0;
     showAllAccounts();
-    cout << "Enter the first name of the customer to delete: ";
+    cout << "Enter the index of the customer to delete: ";
     cin >> index;
     customers.erase(customers.begin() + index);
     cout << "deleting account" << endl;
 }
 
 void updateAccount() {
+    int index = 0;
+    showAllAccounts();
+    cout << "Enter the index of the customer to update: ";
+    cin >> index;
     cout << "updating account" << endl;
 }
 

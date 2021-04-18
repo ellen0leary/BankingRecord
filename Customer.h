@@ -16,7 +16,9 @@ public:
 	Customer(int id, string first_name, string last_name, string dob, int balence=0);
 	bool updateBalance(int val, int ifAdding);
 	bool updateCustomer(string newVal, int ifFirstName);
-	bool updateCustomer(string newDate);
+	bool setFirstName(string first_name);
+	bool setLastName(string last_name);
+	bool setDOB(string dob);
 	void createStandingOrder();
 	string toString();
 };

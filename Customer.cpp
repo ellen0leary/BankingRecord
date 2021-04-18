@@ -7,6 +7,12 @@ Customer::Customer(int id, string first_name, string last_name, string dob, int 
 	mDateOfBirth(dob),
 	mbalance(balance)
 {
+	if (first_name.size() < 20)mFirstName = first_name;
+	else mFirstName = first_name.substr(0, 20);
+
+	if (last_name.size() < 20) mLastName = last_name;
+	else mLastName = last_name.substr(0, 20);
+
 };
 
 bool Customer::updateBalance(int val, int ifAdding) {
@@ -28,10 +34,20 @@ bool Customer::updateCustomer(string newVal, int ifFirstName) {
 	return true;
 }
 
-bool Customer::updateCustomer(string newDate) {
-	return false;
+bool Customer::setFirstName(string first_name) {
+	mFirstName = first_name;
+	return true;
 }
 
+bool Customer::setLastName(string last_name) {
+	mLastName = last_name;
+	return true;
+}
+
+bool Customer::setDOB(string dob) {
+	mDateOfBirth = dob;
+	return true;
+}
 void Customer::createStandingOrder() {
 
 }

@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <ctime>
+#include <stdlib.h>
 #include "Customer.h"
 using namespace std;
 
@@ -16,6 +18,7 @@ void login();
 vector<Customer> customers;
 int main()
 {
+    srand(time(0));
     //vector<Customer>& allCustomers = customers;
     menu();
 }
@@ -58,6 +61,7 @@ void menu() {
 }
 
 void addNewAccount(){
+    int id = rand() % 1000 + 1;
     string fName, lName, DOB, ifStartingBal;
     int startingBal;
     cout << "Enter First Name: ";
@@ -72,22 +76,28 @@ void addNewAccount(){
     if (ifStartingBal == "y" || ifStartingBal == "yes") {
         cout << "Enter Starting Balance: ";
         cin >> startingBal;
-        customers.push_back(Customer(fName, lName, DOB, startingBal));
+        customers.push_back(Customer(id, fName, lName, DOB, startingBal));
     }
     else {
-        customers.push_back(Customer(fName, lName, DOB));
+        customers.push_back(Customer(id, fName, lName, DOB));
     }
     cout << "Adding a new account" << endl;
 }
 
 void showAllAccounts() {
+    int index = 0;
     for (Customer i : customers) {
-        cout << i.toString() << endl;
+        cout << index << ". " << i.toString() << endl;
+        index++;
     }
-    cout << "Displaying all accounts" << endl;
 }
 
 void deleteAccount() {
+    int index = 0;
+    showAllAccounts();
+    cout << "Enter the first name of the customer to delete: ";
+    cin >> index;
+    customers.erase(customers.begin() + index);
     cout << "deleting account" << endl;
 }
 

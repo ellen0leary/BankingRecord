@@ -1,11 +1,13 @@
 #include "Customer.h"
 
-Customer::Customer(string first_name, string last_name, string dob, int balance):
+Customer::Customer(int id, string first_name, string last_name, string dob, int balance):
+	mID(id),
 	mFirstName(first_name),
 	mLastName(last_name) ,
 	mDateOfBirth(dob),
 	mbalance(balance)
-{};
+{
+};
 
 bool Customer::updateBalance(int val, int ifAdding) {
 	if (ifAdding) {
@@ -35,5 +37,5 @@ void Customer::createStandingOrder() {
 }
 
 string Customer::toString() {
-	return  "Name: " + mFirstName + " " + mLastName + ", Date Of Birth: " + mDateOfBirth + ", balance: " + to_string(mbalance) + ".";
+	return  "Name: " + mFirstName + " " + mLastName + ", Date Of Birth: " + mDateOfBirth + ", balance: " + to_string(mbalance) +" ID"+ to_string(mID) +".";
 }

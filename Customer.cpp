@@ -33,3 +33,7 @@ bool Customer::updateCustomer(string newDate) {
 void Customer::createStandingOrder() {
 
 }
+
+string Customer::toString() {
+	return  "Name: " + mFirstName + " " + mLastName + ", Date Of Birth: " + mDateOfBirth + ", balance: " + to_string(mbalance) + ".";
+}

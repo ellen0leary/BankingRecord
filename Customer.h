@@ -18,6 +18,7 @@ public:
 	bool updateCustomer(string newVal, int ifFirstName);
 	bool updateCustomer(string newDate);
 	void createStandingOrder();
+	string toString();
 };
 
 #endif /*customer_hpp*/

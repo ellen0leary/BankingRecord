@@ -58,10 +58,32 @@ void menu() {
 }
 
 void addNewAccount(){
+    string fName, lName, DOB, ifStartingBal;
+    int startingBal;
+    cout << "Enter First Name: ";
+    cin >> fName;
+    cout << "\nEnter Last Name: ";
+    cin >> lName;
+    cout << "\nEnter Date Of Birth (dd/mm/yyyy): ";
+    cin >> DOB;
+    cout << "\nWould you like to start with a balance? (y/n): ";
+    cin >> ifStartingBal;
+
+    if (ifStartingBal == "y" || ifStartingBal == "yes") {
+        cout << "Enter Starting Balance: ";
+        cin >> startingBal;
+        customers.push_back(Customer(fName, lName, DOB, startingBal));
+    }
+    else {
+        customers.push_back(Customer(fName, lName, DOB));
+    }
     cout << "Adding a new account" << endl;
 }
 
 void showAllAccounts() {
+    for (Customer i : customers) {
+        cout << i.toString() << endl;
+    }
     cout << "Displaying all accounts" << endl;
 }
 

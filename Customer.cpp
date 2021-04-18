@@ -34,9 +34,17 @@ bool Customer::updateCustomer(string newVal, int ifFirstName) {
 	return true;
 }
 
+string Customer::getFirstName() {
+	return mFirstName;
+}
+
 bool Customer::setFirstName(string first_name) {
 	mFirstName = first_name;
 	return true;
+}
+
+string Customer::getLastName() {
+	return mLastName;
 }
 
 bool Customer::setLastName(string last_name) {
@@ -44,6 +52,9 @@ bool Customer::setLastName(string last_name) {
 	return true;
 }
 
+string Customer::getDOB() {
+	return mDateOfBirth;
+}
 bool Customer::setDOB(string dob) {
 	mDateOfBirth = dob;
 	return true;
